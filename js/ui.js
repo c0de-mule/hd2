@@ -160,23 +160,29 @@ window.HD2UI = (function () {
     }
 
     /**
-     * Get a pool of all item names for the casino cycling effect.
+     * Get a pool of all items (name + image) for the casino cycling effect.
      */
-    function getAllItemNames() {
-        var names = [];
-        if (HD2Data.primaryWeapons) HD2Data.primaryWeapons.forEach(function (i) { names.push(i.name); });
-        if (HD2Data.secondaryWeapons) HD2Data.secondaryWeapons.forEach(function (i) { names.push(i.name); });
-        if (HD2Data.throwables) HD2Data.throwables.forEach(function (i) { names.push(i.name); });
-        if (HD2Data.stratagems) HD2Data.stratagems.forEach(function (i) { names.push(i.name); });
-        if (HD2Data.boosters) HD2Data.boosters.forEach(function (i) { names.push(i.name); });
-        return names;
+    function getAllItemPool() {
+        var pool = [];
+        function addItems(arr) {
+            if (!arr) return;
+            arr.forEach(function (i) {
+                pool.push({ name: i.name, image: i.image || 'images/placeholder.png' });
+            });
+        }
+        addItems(HD2Data.primaryWeapons);
+        addItems(HD2Data.secondaryWeapons);
+        addItems(HD2Data.throwables);
+        addItems(HD2Data.stratagems);
+        addItems(HD2Data.boosters);
+        return pool;
     }
 
     var activeSpinIntervals = [];
 
     /**
      * Casino slot-machine reveal. Cards flicker and cycle through
-     * random names, then lock in one by one.
+     * random names and images, then lock in one by one.
      */
     function casinoRevealCards() {
         // Clear any running intervals from a previous animation
@@ -184,7 +190,7 @@ window.HD2UI = (function () {
         activeSpinIntervals = [];
 
         var cards = document.querySelectorAll('.loadout-card');
-        var allNames = getAllItemNames();
+        var allItems = getAllItemPool();
         var finals = [];
 
         // Start all cards spinning immediately
@@ -192,12 +198,15 @@ window.HD2UI = (function () {
             card.classList.remove('card--spinning', 'card--locked', 'card--rolling', 'card--revealed');
 
             var nameEl = card.querySelector('.loadout-card__name');
-            finals.push(nameEl.textContent);
+            var imgEl = card.querySelector('.loadout-card__image img');
+            finals.push({ name: nameEl.textContent, image: imgEl.src });
             card.classList.add('card--spinning');
 
-            // Cycle names rapidly
+            // Cycle names and images rapidly
             var intervalId = setInterval(function () {
-                nameEl.textContent = allNames[Math.floor(Math.random() * allNames.length)];
+                var randItem = allItems[Math.floor(Math.random() * allItems.length)];
+                nameEl.textContent = randItem.name;
+                imgEl.src = randItem.image;
             }, 70);
             activeSpinIntervals.push(intervalId);
 
@@ -205,7 +214,8 @@ window.HD2UI = (function () {
             var stopDelay = 400 + index * 150;
             setTimeout(function () {
                 clearInterval(intervalId);
-                nameEl.textContent = finals[index];
+                nameEl.textContent = finals[index].name;
+                imgEl.src = finals[index].image;
                 card.classList.remove('card--spinning');
                 card.classList.add('card--locked');
 

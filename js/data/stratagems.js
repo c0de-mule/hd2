@@ -31,7 +31,7 @@ window.HD2Data.stratagems = [
     { id: "gl-28-belt-fed-grenade-launcher", name: "GL-28 Belt-Fed Grenade Launcher", category: "support-weapon", subcategory: "main", hasBackpack: false, source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Belt-Fed_Grenade_Launcher_Stratagem_Icon.svg" },
     { id: "m-1000-maxigun", name: "M-1000 Maxigun", category: "support-weapon", subcategory: "main", hasBackpack: false, source: "python-commandos", image: "https://helldivers.wiki.gg/images/Maxigun_Stratagem_Icon.svg" },
     { id: "cqc-1-one-true-flag", name: "CQC-1 One True Flag", category: "support-weapon", subcategory: "main", hasBackpack: false, source: "masters-of-ceremony", image: "https://helldivers.wiki.gg/images/One_True_Flag_Stratagem_Icon.svg" },
-    { id: "bmd-c4-pack", name: "B/MD C4 Pack", category: "support-weapon", subcategory: "main", hasBackpack: false, source: "redacted-regiment", image: "https://helldivers.wiki.gg/images/C4_Pack_Stratagem_Icon.svg" },
+    { id: "bmd-c4-pack", name: "B/MD C4 Pack", category: "support-weapon", subcategory: "main", hasBackpack: true, source: "redacted-regiment", image: "https://helldivers.wiki.gg/images/C4_Pack_Stratagem_Icon.svg" },
 
     // --- Expendable (single-use) support weapons ---
     { id: "eat-17-expendable-anti-tank", name: "EAT-17 Expendable Anti-Tank", category: "support-weapon", subcategory: "expendable", hasBackpack: false, source: "base", image: "https://helldivers.wiki.gg/images/Expendable_Anti-Tank_Stratagem_Icon.svg" },
