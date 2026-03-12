@@ -224,37 +224,25 @@ window.HD2UI = (function () {
             }, 80);
             activeSpinIntervals.push(intervalId);
 
-            // Lock in after staggered delay
-            var stopDelay = 500 + index * 180;
-            var revealed = false;
+            // Lock in after staggered delay (two-phase: set content, then reveal)
+            var stopDelay = 400 + index * 150;
             setTimeout(function () {
+                // Phase 1: Stop cycling, set final content while still blurred
                 clearInterval(intervalId);
-
-                var reveal = function () {
-                    if (revealed) return;
-                    revealed = true;
-                    imgEl.onerror = null;
-                    imgEl.onload = null;
-                    card.classList.remove('card--spinning');
-                    card.classList.add('card--locked');
-                    setTimeout(function () {
-                        card.classList.remove('card--locked');
-                    }, 400);
-                };
-
-                // Set final content while still blurred
                 nameEl.textContent = finals[index].name;
-                imgEl.onerror = reveal;
-                imgEl.onload = reveal;
+                imgEl.onerror = null;
+                imgEl.onload = null;
                 imgEl.src = finals[index].image;
-
-                // If already cached, reveal on next frame
-                if (imgEl.complete) {
-                    requestAnimationFrame(reveal);
-                }
-                // Safety fallback
-                setTimeout(reveal, 200);
             }, stopDelay);
+
+            // Phase 2: Reveal on fixed schedule (100ms after content set)
+            setTimeout(function () {
+                card.classList.remove('card--spinning');
+                card.classList.add('card--locked');
+                setTimeout(function () {
+                    card.classList.remove('card--locked');
+                }, 400);
+            }, stopDelay + 100);
         });
     }
 
