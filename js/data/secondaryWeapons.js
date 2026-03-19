@@ -35,4 +35,6 @@ window.HD2Data.secondaryWeapons = [
     { id: "gp20-ultimatum", name: "GP-20 Ultimatum", category: "Special", source: "servants-of-freedom", atScore: 2, image: "https://helldivers.wiki.gg/images/GP-20_Ultimatum_Secondary_Render.png" },
     { id: "plas15-loyalist", name: "PLAS-15 Loyalist", category: "Special", source: "truth-enforcers", ccScore: 1, image: "https://helldivers.wiki.gg/images/PLAS-15_Loyalist_Secondary_Render.png" },
     { id: "p35-re-educator", name: "P-35 Re-Educator", category: "Special", source: "redacted-regiment", image: "https://helldivers.wiki.gg/images/P-35_Re-Educator_Secondary_Render.png" },
+    { id: "cqc73-entrenchment-tool", name: "CQC-73 Entrenchment Tool", category: "Melee", source: "entrenched-division", image: "https://helldivers.wiki.gg/images/CQC-73_Entrenchment_Tool_Secondary_Render.png" },
+    { id: "p69-veto", name: "P-69 Veto", category: "Special", source: "entrenched-division", image: "https://helldivers.wiki.gg/images/P-69_Veto_Secondary_Icon.png" },
 ];

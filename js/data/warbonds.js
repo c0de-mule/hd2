@@ -20,6 +20,7 @@ window.HD2Data.warbonds = [
     { id: "python-commandos", name: "Python Commandos", type: "premium", image: "https://helldivers.wiki.gg/images/thumb/Python_Commandos_Premium_Warbond_Cover.png/800px-Python_Commandos_Premium_Warbond_Cover.png" },
     { id: "redacted-regiment", name: "Redacted Regiment", type: "premium", image: "https://helldivers.wiki.gg/images/thumb/Redacted_Regiment_Premium_Warbond_Cover.png/800px-Redacted_Regiment_Premium_Warbond_Cover.png" },
     { id: "siege-breakers", name: "Siege Breakers", type: "premium", image: "https://helldivers.wiki.gg/images/thumb/Siege_Breakers_Premium_Warbond_Cover.png/800px-Siege_Breakers_Premium_Warbond_Cover.png" },
+    { id: "entrenched-division", name: "Entrenched Division", type: "premium", image: "https://helldivers.wiki.gg/images/thumb/Entrenched_Division_Premium_Warbond_Cover.png/800px-Entrenched_Division_Premium_Warbond_Cover.png" },
     { id: "halo-odst", name: "Halo: ODST", type: "legendary", image: "https://helldivers.wiki.gg/images/thumb/Halo_ODST_Legendary_Warbond_Cover.png/800px-Halo_ODST_Legendary_Warbond_Cover.png" },
     { id: "killzone", name: "Killzone", type: "legendary", image: "https://helldivers.wiki.gg/images/thumb/Righteous_Revenants_Legendary_Warbond_Cover.png/639px-Righteous_Revenants_Legendary_Warbond_Cover.png" },
     { id: "superstore", name: "Superstore", type: "superstore", image: null, icon: "https://helldivers.wiki.gg/images/Super_Credit.svg" }

@@ -55,6 +55,8 @@ window.HD2Data.missionReadyConfig = {
         'arc-3-arc-thrower': 2,
         'rl-77-airburst-rocket-launcher': 2,
 
+        'bflam-80-cremator': 2,
+
         // Support Weapons — CC=1 (supplemental)
         'tx-41-sterilizer': 1,
         'gl-52-de-escalator': 1,
@@ -89,6 +91,7 @@ window.HD2Data.missionReadyConfig = {
 
         // Sentries — CC=1
         'aflam-40-flame-sentry': 1,
+        'agm-17-gas-mortar-sentry': 2,
         'aac-8-autocannon-sentry': 1,
         'am-12-mortar-sentry': 1,
         'alas-98-laser-sentry': 1,
@@ -154,6 +157,7 @@ window.HD2Data.missionReadyConfig = {
 
         // Stratagems — Sentries
         'am-23-ems-mortar-sentry': true,
+        'agm-17-gas-mortar-sentry': true,
 
         // Stratagems — Emplacements
         'fx-12-shield-generator-relay': true,

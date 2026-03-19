@@ -33,6 +33,8 @@ window.HD2Data.stratagems = [
     { id: "cqc-1-one-true-flag", name: "CQC-1 One True Flag", category: "support-weapon", subcategory: "main", hasBackpack: false, source: "masters-of-ceremony", image: "https://helldivers.wiki.gg/images/One_True_Flag_Stratagem_Icon.svg" },
     { id: "bmd-c4-pack", name: "B/MD C4 Pack", category: "support-weapon", subcategory: "main", hasBackpack: true, atScore: 1, source: "redacted-regiment", image: "https://helldivers.wiki.gg/images/C4_Pack_Stratagem_Icon.svg" },
 
+    { id: "bflam-80-cremator", name: "B/FLAM-80 Cremator", category: "support-weapon", subcategory: "main", hasBackpack: true, atScore: 1, source: "entrenched-division", image: "https://helldivers.wiki.gg/images/Cremator_Stratagem_Icon.svg" },
+
     // --- Expendable (single-use) support weapons ---
     { id: "eat-17-expendable-anti-tank", name: "EAT-17 Expendable Anti-Tank", category: "support-weapon", subcategory: "expendable", hasBackpack: false, atScore: 3, source: "base", image: "https://helldivers.wiki.gg/images/Expendable_Anti-Tank_Stratagem_Icon.svg" },
     { id: "eat-411-leveller", name: "EAT-411 Leveller", category: "support-weapon", subcategory: "expendable", hasBackpack: false, source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Leveller_Stratagem_Icon.svg" },
@@ -80,6 +82,7 @@ window.HD2Data.stratagems = [
     { id: "am-23-ems-mortar-sentry", name: "A/M-23 EMS Mortar Sentry", category: "sentry", subcategory: null, hasBackpack: false, source: "base", image: "https://helldivers.wiki.gg/images/EMS_Mortar_Sentry_Stratagem_Icon.svg" },
     { id: "alas-98-laser-sentry", name: "A/LAS-98 Laser Sentry", category: "sentry", subcategory: null, hasBackpack: false, source: "control-group", image: "https://helldivers.wiki.gg/images/Laser_Sentry_Stratagem_Icon.svg" },
     { id: "aflam-40-flame-sentry", name: "A/FLAM-40 Flame Sentry", category: "sentry", subcategory: null, hasBackpack: false, source: "urban-legends", image: "https://helldivers.wiki.gg/images/Flame_Sentry_Stratagem_Icon.svg" },
+    { id: "agm-17-gas-mortar-sentry", name: "A/GM-17 Gas Mortar Sentry", category: "sentry", subcategory: null, hasBackpack: false, source: "entrenched-division", image: "https://helldivers.wiki.gg/images/Gas_Mortar_Sentry_Stratagem_Icon.svg" },
 
     // =====================================================================
     // EMPLACEMENTS

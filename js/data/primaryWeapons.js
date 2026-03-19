@@ -39,6 +39,7 @@ window.HD2Data.primaryWeapons = [
     { id: "sta11-smg", name: "StA-11 SMG", category: "SMG", source: "killzone", ccScore: 1, image: "https://helldivers.wiki.gg/images/StA-11_SMG_Primary_Render.png" },
     { id: "m7s-smg", name: "M7S SMG", category: "SMG", source: "halo-odst", ccScore: 1, image: "https://helldivers.wiki.gg/images/M7S_SMG_Primary_Render.png" },
     { id: "smg32-reprimand", name: "SMG-32 Reprimand", category: "SMG", source: "truth-enforcers", ccScore: 1, image: "https://helldivers.wiki.gg/images/SMG-32_Reprimand_Primary_Render.png" },
+    { id: "smgflam34-stoker", name: "SMG/FLAM-34 Stoker", category: "SMG", source: "entrenched-division", ccScore: 1, image: "https://helldivers.wiki.gg/images/SMGFLAM-34_Stoker_Primary_Icon.png" },
 
     // =====================================================================
     // SHOTGUNS
@@ -54,6 +55,7 @@ window.HD2Data.primaryWeapons = [
     { id: "sg20-halt", name: "SG-20 Halt", category: "Shotgun", source: "truth-enforcers", ccScore: 1, image: "https://helldivers.wiki.gg/images/SG-20_Halt_Primary_Render.png" },
     { id: "m90a-shotgun", name: "M90A Shotgun", category: "Shotgun", source: "halo-odst", ccScore: 1, image: "https://helldivers.wiki.gg/images/M90A_Shotgun_Primary_Render.png" },
     { id: "dbs2-double-freedom", name: "DBS-2 Double Freedom", category: "Shotgun", source: "superstore", ccScore: 1, image: "https://helldivers.wiki.gg/images/DBS-2_Shotgun_Primary_Render.png" },
+    { id: "sg97-sweeper", name: "SG-97 Sweeper", category: "Shotgun", source: "superstore", ccScore: 1, image: "https://helldivers.wiki.gg/images/SG-97_Shotgun_Primary_Render.png" },
 
     // =====================================================================
     // ENERGY WEAPONS

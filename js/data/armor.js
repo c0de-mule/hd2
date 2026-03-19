@@ -110,6 +110,10 @@ window.HD2Data.armorCombos = [
     { id: "medium-supplementary-adrenaline-siege", weightClass: "Medium", passive: "supplementary-adrenaline", passiveName: "Supplementary Adrenaline", source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Supplementary_Adrenaline_Armor_Passive_Icon.svg" },
     { id: "heavy-supplementary-adrenaline-siege", weightClass: "Heavy", passive: "supplementary-adrenaline", passiveName: "Supplementary Adrenaline", source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Supplementary_Adrenaline_Armor_Passive_Icon.svg" },
 
+    // === ENTRENCHED DIVISION ===
+    { id: "medium-concussive-padding-grenadier-entrenched", weightClass: "Medium", passive: "concussive-padding-grenadier", passiveName: "Concussive Padding, Grenadier", source: "entrenched-division", image: "https://helldivers.wiki.gg/images/Concussive_Padding_Armor_Passive_Icon.svg" },
+    { id: "light-concussive-padding-hazmat-entrenched", weightClass: "Light", passive: "concussive-padding-hazmat", passiveName: "Concussive Padding, Hazmat", source: "entrenched-division", image: "https://helldivers.wiki.gg/images/Concussive_Padding_Armor_Passive_Icon.svg" },
+
     // === HALO: ODST ===
     { id: "medium-feet-first-halo", weightClass: "Medium", passive: "feet-first", passiveName: "Feet First", source: "halo-odst", image: "https://helldivers.wiki.gg/images/Feet_First_Armor_Passive_Icon.svg" },
 
@@ -136,5 +140,6 @@ window.HD2Data.armorCombos = [
     { id: "heavy-ballistic-padding-store", weightClass: "Heavy", passive: "ballistic-padding", passiveName: "Ballistic Padding", source: "superstore", image: "https://helldivers.wiki.gg/images/Ballistic_Padding_Armor_Passive_Icon.svg" },
     { id: "light-adreno-defibrillator-store", weightClass: "Light", passive: "adreno-defibrillator", passiveName: "Adreno-Defibrillator", source: "superstore", image: "https://helldivers.wiki.gg/images/Adreno-Defibrillator_Armor_Passive_Icon.svg" },
     { id: "light-desert-stormer-store", weightClass: "Light", passive: "desert-stormer", passiveName: "Desert Stormer", source: "superstore", image: "https://helldivers.wiki.gg/images/Desert_Stormer_Armor_Passive_Icon.svg" },
-    { id: "medium-rock-solid-store", weightClass: "Medium", passive: "rock-solid", passiveName: "Rock Solid", source: "superstore", image: "https://helldivers.wiki.gg/images/Rock_Solid_Armor_Passive_Icon.svg" }
+    { id: "medium-rock-solid-store", weightClass: "Medium", passive: "rock-solid", passiveName: "Rock Solid", source: "superstore", image: "https://helldivers.wiki.gg/images/Rock_Solid_Armor_Passive_Icon.svg" },
+    { id: "heavy-concussive-padding-reinforced-store", weightClass: "Heavy", passive: "concussive-padding-reinforced", passiveName: "Concussive Padding, Reinforced", source: "superstore", image: "https://helldivers.wiki.gg/images/Concussive_Padding_Armor_Passive_Icon.svg" }
 ];
