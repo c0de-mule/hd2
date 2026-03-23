@@ -56,7 +56,7 @@ window.HD2Data.stratagems = [
     { id: "orbital-walking-barrage", name: "Orbital Walking Barrage", category: "orbital", subcategory: null, hasBackpack: false, eliteScore: 1, atScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Orbital_Walking_Barrage_Stratagem_Icon.svg" },
     { id: "orbital-laser", name: "Orbital Laser", category: "orbital", subcategory: null, hasBackpack: false, atScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Orbital_Laser_Stratagem_Icon.svg" },
     { id: "orbital-napalm-barrage", name: "Orbital Napalm Barrage", category: "orbital", subcategory: null, hasBackpack: false, ccScore: 2, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Orbital_Napalm_Barrage_Stratagem_Icon.svg" },
-    { id: "orbital-railcannon-strike", name: "Orbital Railcannon Strike", category: "orbital", subcategory: null, hasBackpack: false, eliteScore: 1, atScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Orbital_Railcannon_Strike_Stratagem_Icon.svg" },
+    { id: "orbital-railcannon-strike", name: "Orbital Railcannon Strike", category: "orbital", subcategory: null, hasBackpack: false, eliteScore: 1, atScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Orbital_Railcannon_Strike_Stratagem_Icon.svg" },
 
     // =====================================================================
     // EAGLE STRIKES
@@ -68,7 +68,7 @@ window.HD2Data.stratagems = [
     { id: "eagle-smoke-strike", name: "Eagle Smoke Strike", category: "eagle", subcategory: null, hasBackpack: false, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_Smoke_Strike_Stratagem_Icon.svg" },
     { id: "eagle-napalm-airstrike", name: "Eagle Napalm Airstrike", category: "eagle", subcategory: null, hasBackpack: false, ccScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_Napalm_Airstrike_Stratagem_Icon.svg" },
     { id: "eagle-110mm-rocket-pods", name: "Eagle 110mm Rocket Pods", category: "eagle", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_110mm_Rocket_Pods_Stratagem_Icon.svg" },
-    { id: "eagle-500kg-bomb", name: "Eagle 500kg Bomb", category: "eagle", subcategory: null, hasBackpack: false, atScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_500kg_Bomb_Stratagem_Icon.svg" },
+    { id: "eagle-500kg-bomb", name: "Eagle 500kg Bomb", category: "eagle", subcategory: null, hasBackpack: false, atScore: 2, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_500kg_Bomb_Stratagem_Icon.svg" },
 
     // =====================================================================
     // SENTRIES

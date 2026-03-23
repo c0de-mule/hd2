@@ -140,6 +140,8 @@ window.HD2Data.factionConfig = {
             'sg451-cookout':            { ccScore: 3 }
         },
         automatons: {
+            // AT Emplacement — still good on bots but toned down
+            'eat-12-anti-tank-emplacement': { atScore: 2 },
             // Fire weapons are weak vs bots (armor resists)
             'flam-40-flamethrower':     { ccScore: 1, eliteScore: 0 },
             'bflam-80-cremator':        { ccScore: 1, eliteScore: 0 },
