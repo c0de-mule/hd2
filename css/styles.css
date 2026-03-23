@@ -126,6 +126,12 @@ button {
     border-color: var(--color-primary);
 }
 
+.faction-btn--rolled {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(245, 197, 24, 0.3);
+}
+
 .mode-btn {
     padding: var(--space-sm) var(--space-lg);
     border: 2px solid var(--color-border);

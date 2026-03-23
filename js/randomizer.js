@@ -4,7 +4,21 @@
  */
 window.HD2Randomizer = (function () {
 
-    var currentFaction = 'any';
+    var currentFaction = 'random';
+    var lastRolledFaction = null;
+    var factionPool = ['terminids', 'automatons', 'illuminate'];
+
+    /**
+     * Resolve faction — if "random", pick one from the pool.
+     */
+    function resolveFaction() {
+        if (currentFaction === 'random') {
+            lastRolledFaction = factionPool[Math.floor(Math.random() * factionPool.length)];
+            return lastRolledFaction;
+        }
+        lastRolledFaction = currentFaction;
+        return currentFaction;
+    }
 
     /**
      * Pick a random element from an array.
@@ -479,7 +493,7 @@ window.HD2Randomizer = (function () {
      */
     function randomize(mode) {
         var maxAttempts = (mode === 'chaos') ? 1 : 50;
-        var faction = currentFaction || 'any';
+        var faction = (mode === 'mission-ready') ? resolveFaction() : (currentFaction || 'random');
 
         for (var attempt = 0; attempt < maxAttempts; attempt++) {
             var enabledPrimary = HD2Filters.getEnabledItems(HD2Data.primaryWeapons);
@@ -564,7 +578,7 @@ window.HD2Randomizer = (function () {
      * slotType: 'primary', 'secondary', 'throwable', 'armor', 'booster', 'strat-0'..'strat-3'
      */
     function rerollSlot(slotType, currentResult, mode) {
-        var faction = currentFaction || 'any';
+        var faction = lastRolledFaction || resolveFaction();
 
         var dataMap = {
             'primary': HD2Data.primaryWeapons,
@@ -702,7 +716,7 @@ window.HD2Randomizer = (function () {
         var loadouts = [];
         var retries = 0;
         var maxRetries = 50;
-        var faction = currentFaction || 'any';
+        var faction = (mode === 'mission-ready') ? resolveFaction() : (currentFaction || 'random');
 
         for (var p = 0; p < 4; p++) {
             // Boosters are unique across squad when possible
@@ -799,14 +813,22 @@ window.HD2Randomizer = (function () {
      * Set the current faction for Mission Ready mode.
      */
     function setFaction(faction) {
-        currentFaction = faction || 'any';
+        currentFaction = faction || 'random';
     }
 
     /**
-     * Get the current faction.
+     * Get the current faction setting.
      */
     function getFaction() {
         return currentFaction;
+    }
+
+    /**
+     * Get the faction that was actually used in the last roll.
+     * When set to "random", this returns which faction was picked.
+     */
+    function getLastRolledFaction() {
+        return lastRolledFaction;
     }
 
     return {
@@ -814,6 +836,7 @@ window.HD2Randomizer = (function () {
         rerollSlot: rerollSlot,
         randomizeSquad: randomizeSquad,
         setFaction: setFaction,
-        getFaction: getFaction
+        getFaction: getFaction,
+        getLastRolledFaction: getLastRolledFaction
     };
 })();

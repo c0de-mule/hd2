@@ -55,7 +55,7 @@ window.HD2Storage = (function () {
     }
 
     function loadFaction() {
-        return load(KEYS.FACTION, 'any');
+        return load(KEYS.FACTION, 'random');
     }
 
     return {

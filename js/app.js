@@ -62,16 +62,17 @@
                 randSection.classList.add('randomize-section--visible');
 
                 // Update URL hash so the loadout is shareable
-                history.replaceState(null, '', HD2Sharing.encodeLoadout(result, currentMode, currentFaction));
+                history.replaceState(null, '', HD2Sharing.encodeLoadout(result, currentMode, getEffectiveFaction()));
             }, 300);
             return;
         }
 
         HD2UI.renderLoadout(result);
+        highlightRolledFaction();
         HD2UI.casinoRevealCards(currentMode);
 
         // Update URL hash so the loadout is shareable
-        history.replaceState(null, '', HD2Sharing.encodeLoadout(result, currentMode, currentFaction));
+        history.replaceState(null, '', HD2Sharing.encodeLoadout(result, currentMode, getEffectiveFaction()));
     }
 
     function doSquadRandomize() {
@@ -115,7 +116,7 @@
                 // Now stagger them in
                 HD2UI.staggerRevealSquadCards();
 
-                history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, currentFaction));
+                history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, getEffectiveFaction()));
             }, 300);
             return;
         }
@@ -123,7 +124,7 @@
         HD2UI.renderSquadLoadout(currentSquadResults);
         HD2UI.staggerRevealSquadCards();
 
-        history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, currentFaction));
+        history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, getEffectiveFaction()));
     }
 
     /**
@@ -167,7 +168,7 @@
                 randSection.classList.remove('randomize-section--hidden');
                 randSection.classList.add('randomize-section--entering', 'randomize-section--visible');
                 HD2UI.renderSquadLoadout(currentSquadResults);
-                history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, currentFaction));
+                history.replaceState(null, '', HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, getEffectiveFaction()));
             } else {
                 // No squad results yet — show empty state
                 emptyEl.style.display = '';
@@ -183,7 +184,7 @@
                 randSection.classList.remove('randomize-section--hidden');
                 randSection.classList.add('randomize-section--entering', 'randomize-section--visible');
                 HD2UI.renderLoadout(currentResult);
-                history.replaceState(null, '', HD2Sharing.encodeLoadout(currentResult, currentMode, currentFaction));
+                history.replaceState(null, '', HD2Sharing.encodeLoadout(currentResult, currentMode, getEffectiveFaction()));
             } else {
                 // No solo results yet — show empty state
                 emptyEl.style.display = '';
@@ -238,7 +239,7 @@
     }
 
     function setFaction(faction) {
-        currentFaction = faction || 'any';
+        currentFaction = faction || 'random';
         HD2Storage.saveFaction(currentFaction);
         HD2Randomizer.setFaction(currentFaction);
 
@@ -248,6 +249,34 @@
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
+            }
+        });
+    }
+
+    /**
+     * Get the effective faction for sharing/encoding.
+     * Uses the last rolled faction if set to random.
+     */
+    function getEffectiveFaction() {
+        if (currentFaction === 'random') {
+            return HD2Randomizer.getLastRolledFaction() || 'terminids';
+        }
+        return currentFaction;
+    }
+
+    /**
+     * After a roll, highlight which faction was actually used.
+     * When "random" is selected, this shows the picked faction.
+     */
+    function highlightRolledFaction() {
+        var rolled = HD2Randomizer.getLastRolledFaction();
+        if (!rolled || currentFaction !== 'random') return;
+
+        var factionBtns = document.querySelectorAll('.faction-btn');
+        factionBtns.forEach(function (btn) {
+            btn.classList.remove('faction-btn--rolled');
+            if (btn.dataset.faction === rolled) {
+                btn.classList.add('faction-btn--rolled');
             }
         });
     }
@@ -367,12 +396,12 @@
 
             if (isSquadMode) {
                 if (!currentSquadResults) return;
-                url = HD2Sharing.buildSquadShareURL(currentSquadResults, currentMode, currentFaction);
-                hash = HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, currentFaction);
+                url = HD2Sharing.buildSquadShareURL(currentSquadResults, currentMode, getEffectiveFaction());
+                hash = HD2Sharing.encodeSquadLoadout(currentSquadResults, currentMode, getEffectiveFaction());
             } else {
                 if (!currentResult) return;
-                url = HD2Sharing.buildShareURL(currentResult, currentMode, currentFaction);
-                hash = HD2Sharing.encodeLoadout(currentResult, currentMode, currentFaction);
+                url = HD2Sharing.buildShareURL(currentResult, currentMode, getEffectiveFaction());
+                hash = HD2Sharing.encodeLoadout(currentResult, currentMode, getEffectiveFaction());
             }
 
             // Update the browser URL without reloading
@@ -520,7 +549,7 @@
                 HD2UI.casinoRevealSingleCard(card.id);
 
                 // Update URL hash after reroll
-                history.replaceState(null, '', HD2Sharing.encodeLoadout(currentResult, currentMode, currentFaction));
+                history.replaceState(null, '', HD2Sharing.encodeLoadout(currentResult, currentMode, getEffectiveFaction()));
             });
         });
     }

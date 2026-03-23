@@ -15,7 +15,7 @@ window.HD2Sharing = (function () {
 
         var params = [];
         params.push('m=' + encodeURIComponent(mode || 'balanced'));
-        if (mode === 'mission-ready' && faction && faction !== 'any') {
+        if (mode === 'mission-ready' && faction && faction !== 'random') {
             params.push('f=' + encodeURIComponent(faction));
         }
         params.push('p=' + encodeURIComponent(result.primaryWeapon.id));
@@ -40,7 +40,7 @@ window.HD2Sharing = (function () {
         var params = [];
         params.push('squad');
         params.push('m=' + encodeURIComponent(mode || 'balanced'));
-        if (mode === 'mission-ready' && faction && faction !== 'any') {
+        if (mode === 'mission-ready' && faction && faction !== 'random') {
             params.push('f=' + encodeURIComponent(faction));
         }
 
@@ -105,7 +105,7 @@ window.HD2Sharing = (function () {
 
         return {
             mode: map.m || 'balanced',
-            faction: map.f || 'any',
+            faction: map.f || 'random',
             primaryId: map.p,
             secondaryId: map.s,
             throwableId: map.t,
@@ -151,7 +151,7 @@ window.HD2Sharing = (function () {
         return {
             squad: true,
             mode: map.m || 'balanced',
-            faction: map.f || 'any',
+            faction: map.f || 'random',
             players: players
         };
     }
