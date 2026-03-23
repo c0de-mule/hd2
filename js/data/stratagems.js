@@ -37,7 +37,7 @@ window.HD2Data.stratagems = [
 
     // --- Expendable (single-use) support weapons ---
     { id: "eat-17-expendable-anti-tank", name: "EAT-17 Expendable Anti-Tank", category: "support-weapon", subcategory: "expendable", hasBackpack: false, atScore: 3, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Expendable_Anti-Tank_Stratagem_Icon.svg" },
-    { id: "eat-411-leveller", name: "EAT-411 Leveller", category: "support-weapon", subcategory: "expendable", hasBackpack: false, atScore: 3, eliteScore: 1, source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Leveller_Stratagem_Icon.svg" },
+    { id: "eat-411-leveller", name: "EAT-411 Leveller", category: "support-weapon", subcategory: "expendable", hasBackpack: false, atScore: 3, source: "siege-breakers", image: "https://helldivers.wiki.gg/images/Leveller_Stratagem_Icon.svg" },
     { id: "eat-700-expendable-napalm", name: "EAT-700 Expendable Napalm", category: "support-weapon", subcategory: "expendable", hasBackpack: false, ccScore: 2, eliteScore: 1, source: "dust-devils", image: "https://helldivers.wiki.gg/images/Expendable_Napalm_Stratagem_Icon.svg" },
     { id: "ms-11-solo-silo", name: "MS-11 Solo Silo", category: "support-weapon", subcategory: "expendable", hasBackpack: false, eliteScore: 1, atScore: 3, source: "dust-devils", image: "https://helldivers.wiki.gg/images/Solo_Silo_Stratagem_Icon.svg" },
 
