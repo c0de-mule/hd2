@@ -119,8 +119,6 @@ window.HD2Daily = (function () {
      * Returns { label, score, color }
      */
     function calculateDifficulty(result) {
-        var config = HD2Data.missionReadyConfig;
-
         // Total AT score
         var atScore = (result.primaryWeapon.atScore || 0) +
                       (result.secondaryWeapon.atScore || 0) +
@@ -129,12 +127,12 @@ window.HD2Daily = (function () {
             atScore += (result.stratagems[i].atScore || 0);
         }
 
-        // Total CC score
+        // Total CC score (now read directly from stratagem objects)
         var ccScore = (result.primaryWeapon.ccScore || 0) +
                       (result.secondaryWeapon.ccScore || 0) +
                       (result.throwable.ccScore || 0);
         for (var i = 0; i < result.stratagems.length; i++) {
-            ccScore += (config.crowdClear[result.stratagems[i].id] || 0);
+            ccScore += (result.stratagems[i].ccScore || 0);
         }
 
         // Rate difficulty for Super Helldive (difficulty 10)

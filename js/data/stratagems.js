@@ -3,7 +3,7 @@ window.HD2Data.stratagems = [
 
     // =====================================================================
     // SUPPORT WEAPONS
-    // ccScore/eliteScore moved from missionReadyConfig.crowdClear onto items
+    // ccScore and eliteScore live directly on item objects
     // =====================================================================
 
     // --- Main (persistent/reloadable) support weapons ---

@@ -126,25 +126,6 @@ window.HD2Filters = (function () {
         HD2Storage.saveItemToggles(itemToggles);
     }
 
-    /**
-     * Get items grouped by warbond for filter panel rendering.
-     */
-    function getItemsByWarbond() {
-        var allItems = getAllItems();
-        var grouped = {};
-
-        HD2Data.warbonds.forEach(function (wb) {
-            grouped[wb.id] = {
-                warbond: wb,
-                items: allItems.filter(function (item) {
-                    return item.source === wb.id;
-                })
-            };
-        });
-
-        return grouped;
-    }
-
     function getItemTypeLabel(item) {
         if (HD2Data.primaryWeapons.indexOf(item) !== -1) return 'Primary';
         if (HD2Data.secondaryWeapons.indexOf(item) !== -1) return 'Secondary';
