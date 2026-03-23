@@ -175,6 +175,34 @@ window.HD2Data.factionConfig = {
     },
 
     // =========================================================================
+    // Utility nudge — when combat thresholds are already met, these items
+    // get a weight bonus for the remaining slots. Higher = more likely.
+    // Only kicks in when all three deficits are satisfied.
+    // =========================================================================
+    utilityNudge: {
+        // Mobility — changes how you play
+        'lift-850-jump-pack': 2,
+        'lift-860-hover-pack': 2,
+        'lift-182-warp-pack': 2,
+        // Shields
+        'sh-32-shield-generator-pack': 1.5,
+        'sh-20-ballistic-shield-backpack': 1,
+        'sh-51-directional-shield': 1,
+        'fx-12-shield-generator-relay': 1.5,
+        // Supply/support
+        'b-1-supply-pack': 1.5,
+        'b-100-portable-hellbomb': 1.5
+    },
+
+    // Stratagems that require a one-handed weapon to be useful.
+    // These will only be picked if the loadout has a one-handed support weapon
+    // or no main support weapon at all.
+    requiresOneHanded: {
+        'sh-20-ballistic-shield-backpack': true,
+        'sh-51-directional-shield': true
+    },
+
+    // =========================================================================
     // Stratagem pool balance weights (carried from missionReadyConfig)
     // Compensates for different pool sizes: blue=47, red=19, green=17
     // =========================================================================

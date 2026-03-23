@@ -28,6 +28,29 @@ window.HD2Randomizer = (function () {
     }
 
     /**
+     * Check if primary weapon is one-handed (can use with ballistic/directional shield).
+     * All SMGs except Reprimand, plus the Exploding Crossbow.
+     */
+    function isOneHandedPrimary(primary) {
+        if (!primary) return false;
+        if (primary.category === 'SMG' && primary.id !== 'smg32-reprimand') return true;
+        if (primary.id === 'cb9-exploding-crossbow') return true;
+        return false;
+    }
+
+    /**
+     * Filter out hand-shield stratagems if primary is two-handed.
+     */
+    function filterHandShields(stratagems, primary) {
+        if (isOneHandedPrimary(primary)) return stratagems;
+        var config = HD2Data.factionConfig;
+        if (!config.requiresOneHanded) return stratagems;
+        return stratagems.filter(function (s) {
+            return !config.requiresOneHanded[s.id];
+        });
+    }
+
+    /**
      * Check if adding a candidate to the current selection would violate
      * any Balanced Mode constraint.
      */
@@ -182,6 +205,12 @@ window.HD2Randomizer = (function () {
 
         weight += contribution * 2;
         weight = Math.max(0.5, weight - overshoot);
+
+        // When thresholds are met, give curated utility items a nudge
+        if (deficits.cc <= 0 && deficits.elite <= 0 && deficits.at <= 0) {
+            var nudge = config.utilityNudge[candidate.id];
+            if (nudge) weight += nudge;
+        }
 
         // Category balance weights (compensate for pool size imbalance)
         if (candidate.category === 'orbital' || candidate.category === 'eagle') {
@@ -481,7 +510,8 @@ window.HD2Randomizer = (function () {
             if (!result.armor) return { error: 'No armor combos enabled.' };
             if (!result.booster) return { error: 'No boosters enabled.' };
 
-            var enabledStratagems = HD2Filters.getEnabledItems(HD2Data.stratagems);
+            var enabledStratagems = filterHandShields(
+                HD2Filters.getEnabledItems(HD2Data.stratagems), result.primaryWeapon);
 
             var stratagemResult;
             if (mode === 'chaos') {
@@ -590,7 +620,8 @@ window.HD2Randomizer = (function () {
                 if (i !== stratIndex) others.push(currentResult.stratagems[i]);
             }
 
-            var enabledStratagems = HD2Filters.getEnabledItems(HD2Data.stratagems);
+            var enabledStratagems = filterHandShields(
+                HD2Filters.getEnabledItems(HD2Data.stratagems), currentResult.primaryWeapon);
 
             var candidates;
             if (mode === 'balanced' || mode === 'mission-ready') {
@@ -706,8 +737,10 @@ window.HD2Randomizer = (function () {
             if (!result.armor) return { error: 'No armor combos enabled.' };
             if (!result.booster) return { error: 'No boosters enabled.' };
 
-            // Filter out stratagems already used by other players
-            var enabledStratagems = HD2Filters.getEnabledItems(HD2Data.stratagems).filter(function (s) {
+            // Filter out stratagems already used by other players, and hand-shields if primary is two-handed
+            var enabledStratagems = filterHandShields(
+                HD2Filters.getEnabledItems(HD2Data.stratagems), result.primaryWeapon
+            ).filter(function (s) {
                 return !usedStratIds[s.id];
             });
 
