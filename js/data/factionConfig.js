@@ -214,6 +214,6 @@ window.HD2Data.factionConfig = {
     // Stratagem pool balance weights (carried from missionReadyConfig)
     // Compensates for different pool sizes: blue=47, red=19, green=17
     // =========================================================================
-    redStratagemWeight: 2,    // orbitals + eagles
-    greenStratagemWeight: 2   // sentries + emplacements
+    redStratagemWeight: 1.5,    // orbitals + eagles
+    greenStratagemWeight: 1.5   // sentries + emplacements
 };

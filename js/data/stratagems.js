@@ -68,7 +68,7 @@ window.HD2Data.stratagems = [
     { id: "eagle-smoke-strike", name: "Eagle Smoke Strike", category: "eagle", subcategory: null, hasBackpack: false, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_Smoke_Strike_Stratagem_Icon.svg" },
     { id: "eagle-napalm-airstrike", name: "Eagle Napalm Airstrike", category: "eagle", subcategory: null, hasBackpack: false, ccScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_Napalm_Airstrike_Stratagem_Icon.svg" },
     { id: "eagle-110mm-rocket-pods", name: "Eagle 110mm Rocket Pods", category: "eagle", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_110mm_Rocket_Pods_Stratagem_Icon.svg" },
-    { id: "eagle-500kg-bomb", name: "Eagle 500kg Bomb", category: "eagle", subcategory: null, hasBackpack: false, atScore: 2, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_500kg_Bomb_Stratagem_Icon.svg" },
+    { id: "eagle-500kg-bomb", name: "Eagle 500kg Bomb", category: "eagle", subcategory: null, hasBackpack: false, atScore: 2, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Eagle_500kg_Bomb_Stratagem_Icon.svg" },
 
     // =====================================================================
     // SENTRIES
@@ -78,7 +78,7 @@ window.HD2Data.stratagems = [
     { id: "ag-16-gatling-sentry", name: "A/G-16 Gatling Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 2, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Gatling_Sentry_Stratagem_Icon.svg" },
     { id: "aac-8-autocannon-sentry", name: "A/AC-8 Autocannon Sentry", category: "sentry", subcategory: null, hasBackpack: false, atScore: 1, ccScore: 1, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Autocannon_Sentry_Stratagem_Icon.svg" },
     { id: "am-12-mortar-sentry", name: "A/M-12 Mortar Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Mortar_Sentry_Stratagem_Icon.svg" },
-    { id: "amls-4x-rocket-sentry", name: "A/MLS-4X Rocket Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 2, atScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Rocket_Sentry_Stratagem_Icon.svg" },
+    { id: "amls-4x-rocket-sentry", name: "A/MLS-4X Rocket Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 2, atScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Rocket_Sentry_Stratagem_Icon.svg" },
     { id: "am-23-ems-mortar-sentry", name: "A/M-23 EMS Mortar Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/EMS_Mortar_Sentry_Stratagem_Icon.svg" },
     { id: "alas-98-laser-sentry", name: "A/LAS-98 Laser Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, eliteScore: 1, source: "control-group", image: "https://helldivers.wiki.gg/images/Laser_Sentry_Stratagem_Icon.svg" },
     { id: "aflam-40-flame-sentry", name: "A/FLAM-40 Flame Sentry", category: "sentry", subcategory: null, hasBackpack: false, ccScore: 1, source: "urban-legends", image: "https://helldivers.wiki.gg/images/Flame_Sentry_Stratagem_Icon.svg" },
