@@ -120,8 +120,8 @@ window.HD2Data.stratagems = [
     // VEHICLES / EXOSUITS
     // =====================================================================
 
-    { id: "exo-45-patriot-exosuit", name: "EXO-45 Patriot Exosuit", category: "vehicle", subcategory: null, hasBackpack: false, atScore: 1, ccScore: 2, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Patriot_Exosuit_Stratagem_Icon.svg" },
-    { id: "exo-49-emancipator-exosuit", name: "EXO-49 Emancipator Exosuit", category: "vehicle", subcategory: null, hasBackpack: false, atScore: 1, ccScore: 2, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Emancipator_Exosuit_Stratagem_Icon.svg" },
+    { id: "exo-45-patriot-exosuit", name: "EXO-45 Patriot Exosuit", category: "vehicle", subcategory: null, hasBackpack: false, ccScore: 2, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Patriot_Exosuit_Stratagem_Icon.svg" },
+    { id: "exo-49-emancipator-exosuit", name: "EXO-49 Emancipator Exosuit", category: "vehicle", subcategory: null, hasBackpack: false, ccScore: 2, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Emancipator_Exosuit_Stratagem_Icon.svg" },
     { id: "m-102-fast-recon-vehicle", name: "M-102 Fast Recon Vehicle", category: "vehicle", subcategory: null, hasBackpack: false, ccScore: 1, source: "base", image: "https://helldivers.wiki.gg/images/Fast_Recon_Vehicle_Stratagem_Icon.svg" },
     { id: "td-220-bastion-mk-xvi", name: "TD-220 Bastion MK XVI", category: "vehicle", subcategory: null, hasBackpack: false, atScore: 2, ccScore: 1, eliteScore: 2, source: "base", image: "https://helldivers.wiki.gg/images/Bastion_MK_XVI_Stratagem_Icon.svg" }
 ];

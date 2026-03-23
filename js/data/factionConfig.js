@@ -130,6 +130,8 @@ window.HD2Data.factionConfig = {
             'sg225ie-breaker-incendiary': { ccScore: 3 },
             // Torcher excels vs bugs
             'flam66-torcher':           { ccScore: 3 },
+            // Solo Silo is less useful vs bugs
+            'ms-11-solo-silo': { atScore: 2 },
             // AT Emplacement is bad vs bugs — stationary, bugs swarm you
             'eat-12-anti-tank-emplacement': { atScore: 1, eliteScore: 1 },
             // HMG Emplacement same problem
