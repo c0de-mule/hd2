@@ -349,21 +349,20 @@ window.HD2Randomizer = (function () {
     }
 
     /**
-     * Weighted pick for weapons/throwables based on faction scores.
-     * Items with higher faction-relevant scores are more likely but
-     * low-score items can still appear (base weight of 1).
+     * Light tier weighting for weapons/throwables.
+     * Uses base scores (not faction-specific) to gently nudge toward
+     * more capable items. Zero-score items still appear, just less often.
+     * A weapon with 0 total score gets weight 0.6, a weapon with 3+ gets ~1.5.
      */
-    function pickFactionWeapon(pool, faction) {
+    function pickTierWeighted(pool) {
         var weights = [];
         var totalWeight = 0;
 
         for (var i = 0; i < pool.length; i++) {
             var item = pool[i];
-            var cc = getScore(item, 'ccScore', faction);
-            var elite = getScore(item, 'eliteScore', faction);
-            var at = getScore(item, 'atScore', faction);
-            // Base weight 1 + total score contribution
-            var w = 1 + (cc + elite + at) * 0.5;
+            var total = (item.ccScore || 0) + (item.eliteScore || 0) + (item.atScore || 0);
+            // Base 0.6 for zero-score items, scales up gently
+            var w = 0.6 + total * 0.3;
             weights.push(w);
             totalWeight += w;
         }
@@ -462,9 +461,9 @@ window.HD2Randomizer = (function () {
 
             var isMR = mode === 'mission-ready';
             var result = {
-                primaryWeapon: pickRandom(enabledPrimary),
-                secondaryWeapon: pickRandom(enabledSecondary),
-                throwable: pickRandom(enabledThrowables),
+                primaryWeapon: isMR ? pickTierWeighted(enabledPrimary) : pickRandom(enabledPrimary),
+                secondaryWeapon: isMR ? pickTierWeighted(enabledSecondary) : pickRandom(enabledSecondary),
+                throwable: isMR ? pickTierWeighted(enabledThrowables) : pickRandom(enabledThrowables),
                 armor: (isMR && enabledArmor.length > 0)
                     ? pickFactionArmor(enabledArmor, faction)
                     : pickRandom(enabledArmor),
@@ -570,7 +569,7 @@ window.HD2Randomizer = (function () {
                 } else if (slotType === 'booster') {
                     pick = pickFactionBooster(pickPool, faction);
                 } else {
-                    pick = pickRandom(pickPool);
+                    pick = pickTierWeighted(pickPool);
                 }
             } else {
                 pick = pickRandom(pickPool);
